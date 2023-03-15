@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <center>FORM</center>
+    <style>
+        body {}
+    </style>
+    <script>
+        function formvalidation() {
+            var name = document.register.name.value;
+            var dob = document.register.dob.value;
+            var gend = document.register.gen.value;
+            var fname = document.register.fname.value;
+            var add = document.register.address.value;
+            var mobile = document.register.mno.value;
+            var phone = document.register.pno.value;
+            var email = document.register.mail.value;
+            var col = document.register.cname.value;
+            var mark = document.register.mark.value;
+            var interest = document.register.Interest.value;
+
+            var markregex=/^[0-9]{3}.[0-9]{2}$/
+            var phoneregex=/^[0-9]{2}-[0-9]{3}-[0-9]{6}$/
+            var mobileregex=/^[0-9]{10}$/
+            var nameregex = /^[A-Za-z]+$/
+            var emailregex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+
+            if (name == '') {
+                alert('Please enter your name');
+            } else if (!nameregex.test(name)) {
+                alert('Name field required only alphabet characters');
+            } else if (email == '') {
+                alert('Please enter your  email id');
+            }
+            else if (!phoneregex.test(phone)) {
+                alert('Invalid phone number');
+            }
+            else if (!mobileregex.test(mobile)) {
+                alert('Invalid mobile number');
+            }
+             else if (!emailregex.test(email)) {
+                alert('Invalid email');
+            }else if (!markregex.test(mark)) {
+                alert('Invalid mark');
+            }
+             else {
+                alert('Thank you for registering');
+                display(name, dob, gend, fname, add, mobile, phone, email, col, mark, interest);
+            }
+        }
+
+
+
+        function display(name, dob, gend, fname, add, mobile, phone, email, col, mark, interest) {
+            document.write("<h2>Registration Details:</h2>");
+            document.write("<p><strong>Name:</strong> " + name + "</p>");
+            document.write("<p><strong>Date of Birth:</strong> " + dob + "</p>");
+            document.write("<p><strong>Gender:</strong> " + gend + "</p>");
+            document.write("<p><strong>Father's Name:</strong> " + fname + "</p>");
+            document.write("<p><strong>Address:</strong> " + add + "</p>");
+            document.write("<p><strong>Mobile Number:</strong> " + mobile + "</p>");
+            document.write("<p><strong>Phone Number:</strong> " + phone + "</p>");
+            document.write("<p><strong>Email:</strong> " + email + "</p>");
+            document.write("<p><strong>College Name:</strong> " + col + "</p>");
+            document.write("<p><strong>Mark:</strong> " + mark + "</p>");
+            
+        }
+    </script>
+</head>
+
+<body>
+    <script src="open"></script>
+    <form action=" " name="register" method="post" onsubmit="formvalidation()">
+        <fieldset
+            style="background: #6a9113;background: -webkit-linear-gradient(to right, #6a9113, #141517);background: linear-gradient(to right, #6a9113, #141517);">
+            <legend style="text-align: center;">
+                REGISTRATION FORM</legend>
+
+            <label>Name :</label>
+            <input type="text" required placeholder="name" name="name">
+            <br><br>
+
+            <label>Date of Birth :</label>
+            <input type="date" required placeholder="Dob" name="dob">
+            <br><br>
+
+            <label>gender :</label>
+            <input type="radio" name="gen" value="Male">Male
+            <input type="radio" name="gen" value="Female">Female
+            <br><br>
+
+            <label>Father name :</label>
+            <input type="text" required placeholder="father name" name="fname">
+            <br><br>
+
+            <label>address :</label>
+            <textarea rows="5" cols="50" name="address"></textarea>
+            <br><br>
+
+            <label>mobile no :</label>
+            <input type="text" required placeholder="mobile number" name="mno">
+            <br><br>
+
+            <label>phone number :</label>
+            <input type="tel"  required placeholder="99-999-999999" name="pno">
+            <br><br>
+
+            <label>Email id :</label>
+            <input type="email" required placeholder="gmail" name="mail">
+            <br><br>
+
+            <label>College Name :</label>
+            <input type="text" required placeholder="college name" name="cname">
+            <br><br>
+
+            <label>Mark Scored :</label>
+            <input type="text"  required placeholder="mark" name="mark">
+            <br><br>
+
+            <label>Personal Interest :</label>
+            <br>
+            <input type="checkbox" name="Interest" value="frontend">FrontEnd
+            <input type="checkbox" name="Interest" value="backend">BackEnd
+            <input type="checkbox" name="Interest" value="database">Database
+            <br><br>
+
+            <button type="submit" style="margin-left:  550px;">submit</button>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
