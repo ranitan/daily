@@ -14,13 +14,13 @@
         function formvalidation() {
             var name = document.register.name.value;
             var dob = document.register.dob.value;
-            var gend = document.register.gen.value;
+            var gender = document.register.gender.value;
             var fname = document.register.fname.value;
-            var add = document.register.address.value;
-            var mobile = document.register.mno.value;
-            var phone = document.register.pno.value;
+            var address = document.register.address.value;
+            var mobile = document.register.mobileno.value;
+            var phone = document.register.phoneno.value;
             var email = document.register.mail.value;
-            var col = document.register.cname.value;
+            var college = document.register.college.value;
             var mark = document.register.mark.value;
             var interest = document.register.Interest.value;
 
@@ -50,23 +50,23 @@
             }
              else {
                 alert('Thank you for registering');
-                display(name, dob, gend, fname, add, mobile, phone, email, col, mark, interest);
+                display(name, dob, gender, fname, address, mobile, phone, email, college, mark, interest);
             }
         }
 
 
 
-        function display(name, dob, gend, fname, add, mobile, phone, email, col, mark, interest) {
+        function display(name, dob, gender, fname, address, mobile, phone, email, college, mark, interest) {
             document.write("<h2>Registration Details:</h2>");
             document.write("<p><strong>Name:</strong> " + name + "</p>");
             document.write("<p><strong>Date of Birth:</strong> " + dob + "</p>");
-            document.write("<p><strong>Gender:</strong> " + gend + "</p>");
+            document.write("<p><strong>Gender:</strong> " + gender + "</p>");
             document.write("<p><strong>Father's Name:</strong> " + fname + "</p>");
-            document.write("<p><strong>Address:</strong> " + add + "</p>");
+            document.write("<p><strong>Address:</strong> " + address + "</p>");
             document.write("<p><strong>Mobile Number:</strong> " + mobile + "</p>");
             document.write("<p><strong>Phone Number:</strong> " + phone + "</p>");
             document.write("<p><strong>Email:</strong> " + email + "</p>");
-            document.write("<p><strong>College Name:</strong> " + col + "</p>");
+            document.write("<p><strong>College Name:</strong> " + college + "</p>");
             document.write("<p><strong>Mark:</strong> " + mark + "</p>");
             
         }
@@ -90,8 +90,8 @@
             <br><br>
 
             <label>gender :</label>
-            <input type="radio" name="gen" value="Male">Male
-            <input type="radio" name="gen" value="Female">Female
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
             <br><br>
 
             <label>Father name :</label>
@@ -99,15 +99,15 @@
             <br><br>
 
             <label>address :</label>
-            <textarea rows="5" cols="50" name="address"></textarea>
+            <textarea name="address"></textarea>
             <br><br>
 
             <label>mobile no :</label>
-            <input type="text" required placeholder="mobile number" name="mno">
+            <input type="text" required placeholder="mobile number" name="mobileno">
             <br><br>
 
             <label>phone number :</label>
-            <input type="tel"  required placeholder="99-999-999999" name="pno">
+            <input type="tel"  required placeholder="99-999-999999" name="phoneno">
             <br><br>
 
             <label>Email id :</label>
@@ -115,7 +115,7 @@
             <br><br>
 
             <label>College Name :</label>
-            <input type="text" required placeholder="college name" name="cname">
+            <input type="text" required placeholder="college name" name="college">
             <br><br>
 
             <label>Mark Scored :</label>
@@ -124,9 +124,13 @@
 
             <label>Personal Interest :</label>
             <br>
-            <input type="checkbox" name="Interest" value="frontend">FrontEnd
-            <input type="checkbox" name="Interest" value="backend">BackEnd
-            <input type="checkbox" name="Interest" value="database">Database
+            <input type="checkbox" name="Interest" value="javascript">javascript
+            <input type="checkbox" name="Interest" value="typescript">typescript
+            <input type="checkbox" name="Interest" value="html">html
+            <input type="checkbox" name="Interest" value="jquery">jquery
+            <input type="checkbox" name="Interest" value="uiux">uiux
+            <input type="checkbox" name="Interest" value="css">css
+            <input type="checkbox" name="Interest" value="bhootstrap">bhootstrap
             <br><br>
 
             <button type="submit" style="margin-left:  550px;">submit</button>
