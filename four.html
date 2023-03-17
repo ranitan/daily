@@ -25,7 +25,13 @@
             var email = document.register.mail.value;
             var college = document.register.college.value;
             var mark = document.register.mark.value;
-            var interest = document.register.Interest.value;
+            var js = document.register.js.checked;
+            var ts = document.register.ts.checked;
+            var html = document.register.html.checked;
+            var jq = document.register.jq.checked;
+            var uiux = document.register.uiux.checked;
+            var css = document.register.css.checked;
+            var bhoot = document.register.bhoot.checked;
 
             var markregex=/^[0-9]{3}.[0-9]{2}$/
             var phoneregex=/^[0-9]{2}-[0-9]{3}-[0-9]{6}$/
@@ -53,13 +59,13 @@
             }
              else {
                 alert('Thank you for registering');
-                display(name, dob, gender, fname, address, mobile, phone, email, college, mark, interest);
+                display(name, dob, gender, fname, address, mobile, phone, email, college, mark, js,ts,html,jq,css,bhoot);
             }
         }
 
 
 
-        function display(name, dob, gender, fname, address, mobile, phone, email, college, mark, interest) {
+        function display(name, dob, gender, fname, address, mobile, phone, email, college, mark,js,ts,html,jq,css,bhoot) {
             document.write("<h2>Registration Details:</h2>");
             document.write("<p><strong>Name:</strong> " + name + "</p>");
             document.write("<p><strong>Date of Birth:</strong> " + dob + "</p>");
@@ -71,8 +77,30 @@
             document.write("<p><strong>Email:</strong> " + email + "</p>");
             document.write("<p><strong>College Name:</strong> " + college + "</p>");
             document.write("<p><strong>Mark:</strong> " + mark + "</p>");
+            document.write("<p><strong>Intrests:</strong> </p>")
+    if (js) {
+        document.write("<p>javascript</p>");
+    }
+    if (ts) {
+        document.write("<p>tyoescript</p>");
+    }
+    if (html) {
+        document.write("<p>html</p>");
+    }
+    if (jq) {
+        document.write("<p>jquery</p>");
+    }
+    if (uiux) {
+        document.write("<p>uiux</p>");
+    }
+    if (css) {
+        document.write("<p>css</p>");
+    }
+    if (bhoot) {
+        document.write("<p>bhootstrap</p>");
+    }
             
-        }
+}
     </script>
 </head>
 
@@ -127,13 +155,13 @@
 
             <label>Personal Interest :</label>
             <br>
-            <input type="checkbox" name="Interest" value="javascript">javascript
-            <input type="checkbox" name="Interest" value="typescript">typescript
-            <input type="checkbox" name="Interest" value="html">html
-            <input type="checkbox" name="Interest" value="jquery">jquery
-            <input type="checkbox" name="Interest" value="uiux">uiux
-            <input type="checkbox" name="Interest" value="css">css
-            <input type="checkbox" name="Interest" value="bhootstrap">bhootstrap
+            <input type="checkbox" name="js">javascript
+            <input type="checkbox" name="ts">typescript
+            <input type="checkbox" name="html">html
+            <input type="checkbox" name="jq">jquery
+            <input type="checkbox" name="uiux">uiux
+            <input type="checkbox" name="css">css
+            <input type="checkbox" name="bhoot">bhootstrap
             <br><br>
 
             <button type="submit" style="margin-left:  550px;">submit</button>
